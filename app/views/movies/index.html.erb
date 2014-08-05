@@ -1,10 +1,10 @@
 <h1>Rotten Mangoes</h1>
 <h2><p>Like RottenTomatoes... only better.</p></h2>
 <% @movies.each do |movie| %>
+  <%= link_to image_tag(movie.poster_img_url), movie_path(movie) %>
   <h3>Title:</h3><%= movie.title %>
   <h3>Director:</h3><%= movie.director %>
   <h3>Runtime:</h3><%= movie.runtime_in_minutes %>
-  <h3>Image:</h3><%= image_tag movie.poster_img_url %>
   <hr>
 <% end %>
 
