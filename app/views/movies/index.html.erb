@@ -1,0 +1,11 @@
+<h1>Rotten Mangoes</h1>
+<h2><p>Like RottenTomatoes... only better.</p></h2>
+<% @movies.each do |movie| %>
+  <h3>Title:</h3><%= movie.title %>
+  <h3>Director:</h3><%= movie.director %>
+  <h3>Runtime:</h3><%= movie.runtime_in_minutes %>
+  <h3>Image:</h3><%= image_tag movie.poster_img_url %>
+  <hr>
+<% end %>
+
+<%= link_to "Stop being a lazy bum and add a movie!", new_movie_path %>
