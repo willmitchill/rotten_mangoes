@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :movies
+  get 'review/new'
+
+  get 'review/create'
+
+  resources :movies do
+    resources :reviews, only: [:new, :create]
+  end
 
   resources :users, only: [:new, :create]
 
